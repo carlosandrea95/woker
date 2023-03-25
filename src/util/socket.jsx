@@ -1,12 +1,12 @@
-import { io } from "socket.io-client";
+import { io } from 'socket.io-client'
 
-export let socket = null;
+export let socket = null
 
 export const InitSocket = () => {
-  socket = io("", { transports: ["websocket"] });
-};
+  socket = io('', { transports: ['websocket'] })
+}
 
 export const DestroySocket = () => {
-  socket.disconnect();
-  socket = null;
-};
+  socket.disconnect()
+  socket = null
+}

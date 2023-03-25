@@ -1,11 +1,11 @@
-import appLocaleData from "react-intl/locale-data/es.js";
-import esMessages from "../locales/es_ES.json";
+import appLocaleData from 'react-intl/locale-data/es.js'
+import esMessages from '../locales/es_ES.json'
 
 const esLang = {
   messages: {
-    ...esMessages,
+    ...esMessages
   },
-  locale: "es",
-  data: appLocaleData,
-};
-export default esLang;
+  locale: 'es',
+  data: appLocaleData
+}
+export default esLang
