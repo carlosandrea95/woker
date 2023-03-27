@@ -1,31 +1,33 @@
 import { IntlProvider } from 'react-intl'
-import { useState } from 'react'
-import IntlTranslate from './util/IntlTranslate'
 import AppLocale from './helpers/providers/translate/index'
+import AuthLayout from './components/layouts/AuthLayout'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import SignIn from './app/routes/auth/SignIn'
+import SignUp from './app/routes/auth/SignUp'
+import ForgetPassword from './app/routes/auth/recover/ForgetPassword'
+import ChangePassword from './app/routes/auth/recover/ChangePassword'
+import Error404 from './components/error/Error404'
 
-function App () {
-  const [len, setLen] = useState('en')
-  const currentAppLocale = AppLocale[len]
-  const changeLocale = () => {
-    setLen(len === 'es' ? 'en' : 'es')
-    console.log(len)
-  }
+const App = () => {
+  const currentAppLocale = AppLocale[localStorage.getItem('language')]
+
   return (
     <IntlProvider
       messages={currentAppLocale.messages}
       locale={currentAppLocale.locale}
       defaultLocale="en"
     >
-      <>
-        <p>
-          <IntlTranslate id="hello" />
-        </p>
-        <div className="flex justify-center content-center">
-          <button className="p-5 w-300 rounded border" onClick={changeLocale}>
-            Click Me
-          </button>
-        </div>
-      </>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<AuthLayout />}>
+            <Route index element={<SignIn />} />
+            <Route path="signup" element={<SignUp />} />
+            <Route path="forget" element={<ForgetPassword />} />
+            <Route path="recover" element={<ChangePassword />} />
+          </Route>
+          <Route path="*" element={<Error404 />} />
+        </Routes>
+      </BrowserRouter>
     </IntlProvider>
   )
 }

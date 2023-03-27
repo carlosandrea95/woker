@@ -1,3 +1,15 @@
 {
-  "hello": "Hola Mundo, es un nuevo dia."
+  "hello": "Hola Mundo, es un nuevo dia.",
+  "button.send": "Enviar",
+  "full.name": "Nombre Completo",
+  "username": "Nombre de Usuario",
+  "password": "Contraseña",
+  "retry.password": "Repetir Contraseña",
+  "button.signin": "Iniciar Sesión",
+  "email": "Correo Electrónico",
+  "not.account": "¿No tienes una cuenta?",
+  "sign-up": "Regístrate",
+  "woker.signin": "Inicia Sesión en Woker",
+  "woker.signin.caption": "¡Nos alegra volver a verte!",
+  "woker.signup": "Registrarse"
 }
